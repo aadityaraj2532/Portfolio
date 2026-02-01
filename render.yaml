@@ -26,7 +26,5 @@ staticSites:
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: portfolio-backend
-          property: url
+        value: https://portfolio-backend.onrender.com
+        # NOTE: After your backend is deployed, copy its URL and update this value in Render Dashboard.
