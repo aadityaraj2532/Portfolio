@@ -1,9 +1,6 @@
 # 🎨 Personal Portfolio Website
 
 A modern, responsive personal portfolio website built with a **React** (Vite) frontend and a **FastAPI** (Python) backend. Designed to showcase projects, skills, and resume with a premium, glassmorphism-inspired UI.
-
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
-
 ## 🚀 Live Demo
 
 [https://portfolio-frontend-jptb.onrender.com/](https://portfolio-frontend-jptb.onrender.com/)
