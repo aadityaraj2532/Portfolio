@@ -11,8 +11,8 @@ const About = () => {
             desc: "Transforming raw data into meaningful insights using Pandas and Visualization tools."
         },
         {
-            title: "Real-Time Systems",
-            desc: "Developing responsive, high-performance applications that react instantly."
+            title: "AI & Machine Learning",
+            desc: "Currently learning to build intelligent systems and exploring the depths of AI/ML."
         }
     ];
 
