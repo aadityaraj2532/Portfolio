@@ -26,7 +26,8 @@ services:
     env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    staticPublishPath: dist 
+    # NOTE: path 'dist' is relative to rootDir 'frontend'
     envVars:
       - key: VITE_API_URL
         value: https://portfolio-backend.onrender.com
