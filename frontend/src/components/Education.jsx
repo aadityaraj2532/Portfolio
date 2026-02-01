@@ -19,6 +19,26 @@ const Education = () => {
               <FaGraduationCap />
             </div>
             <div className="timeline-content">
+              <span className="year">Completed</span>
+              <h3 className="degree">Schooling</h3>
+              <h4 className="institution">Jawahar Navodaya Vidyalaya</h4>
+              <p className="description">
+                Completed my schooling with a focus on science and mathematics.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="timeline-item"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="timeline-icon">
+              <FaGraduationCap />
+            </div>
+            <div className="timeline-content">
               <span className="year">2024 - 2028 (Expected)</span>
               <h3 className="degree">B.Tech in Computer Science & Engineering</h3>
               <h4 className="institution">Sitare University</h4>
