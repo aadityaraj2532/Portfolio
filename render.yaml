@@ -3,8 +3,9 @@ services:
   - type: web
     name: portfolio-backend
     env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0
@@ -23,9 +24,10 @@ services:
   - type: web
     name: portfolio-frontend
     env: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
         value: https://portfolio-backend.onrender.com
-        # NOTE: After your backend is deployed, copy its URL and update this value in Render Dashboard.
+        # NOTE: Update this value in Render Dashboard after backend deployment.
