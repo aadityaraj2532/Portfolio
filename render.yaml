@@ -19,55 +19,9 @@ services:
       - key: MAIL_SERVER
         value: smtp.gmail.com
 
+staticSites:
   # Frontend Service (Static Site)
-  # IMPORTANT: For Render Blueprints, standard static sites use type: static
-  # But if "type: static" failed, it might be an issue with environment.
-  # However, common fix involves checking syntax.
-  # Let's try specifying environment properly.
-  # Actually, Render docs say: type: static, env: static.
-  # The user reported "unknown type static". This is strange.
-  # Maybe the user's Render account is on an older version or specific context?
-  # Or maybe I should use type: webenv: static? No.
-  # UPDATE: Some sources say "type: static" is correct.
-  # Let's try correcting "env: static" to just implied or verify if indentation was an issue.
-  # Actually, let's try the suggestion from search: "type: web" and "runtime: static"? No, that's for web services serving static files.
-  # Let's stick to "type: pstatic" (no) or just "type: static".
-  # Wait, looking at the error: "unknown type 'static'".
-  # Maybe I should use the dashboard creation method if blueprint fails?
-  # But user wants blueprint.
-  # Let's try "type: web" with static build commands for now? No that requires a server.
-  # Ah! I see "services" list.
-  # Maybe I should check if "static" is valid for "services".
-  # Docs: https://render.com/docs/blueprint-spec#static-sites
-  # It says "type: static_site" ? No, generally "type: static" in some contexts or "type: web".
-  # Let's check authoritative docs if possible. 
-  # Wait, search result 1 says: "Blueprints specification requires... type of the service to web... runtime: static".
-  # That sounds authoritative.
-  # Let's try changing type to 'web' and env to 'static'?
-  # No, 'env' for static site is 'static'.
-  # ERROR SAYS: unknown type "static".
-  # Let's try "type: web" for the frontend too, but use a static server?
-  # No, that defeats the purpose.
-  # Let's assume the search result [1] is correct about syntax nuance.
-  # BUT, usually it is:
-  # - type: static
-  #   name: ...
-  #   env: static
-  #
-  # Let's try "type: static" again but ensure no hidden chars?
-  # Or maybe it is "type: site"?
-  # Let's try removing the comment above it?
-  
-  # ACTUAL FIX: The search result suggests `type: web` is NOT for static sites usually.
-  # However, if `type: static` is rejected, maybe `type: static_site`?
-  # Let's try `type: web` serving static files using a small server (e.g. `npm run preview` or `serve`)?
-  # No, that costs money (Web Service vs Free Static Site).
-  # We want a Static Site.
-  
-  # Let's try:
-  - type: static
-    name: portfolio-frontend
-    env: static
+  - name: portfolio-frontend
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
